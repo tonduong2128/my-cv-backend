@@ -3,12 +3,12 @@ export default (() => {
     var connection;
     return {
         connect: async () => {
-            
             connection = await mysql.createPool({
-                host: 'localhost',
-                user: 'root',
-                password: '',
-                database: 'my-cv'
+                host: process.env.HOST,
+                user: process.env.USER,
+                password: process.env.PASSWORD,
+                database: process.env.DATABASE,
+                port: process.env.PORT
             });
         },
         execute: async (query) => {

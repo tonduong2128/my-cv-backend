@@ -3,8 +3,11 @@ import route from "./route/route.mjs"
 import db from './db/db.mjs'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import dotenv from 'dotenv'
 const app = express();
 const port = 3000;
+
+dotenv.config();
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
